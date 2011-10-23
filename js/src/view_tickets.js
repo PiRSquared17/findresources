@@ -21,11 +21,21 @@ function getSaldo(){
 			$('#ticketDataEditorValue').val("$ "+response.valor);
 		},
 		error: function(response){
-			processError(response);
+			/*processError(response);*/
+			$('#ticketDataEditorValue').val("$ 0");
 		}
 	});
 
 }
+
+$(document).ready(function(){
+	$('#ticketDataEditorQuantity').focus();
+	$('#ticketDataEditorQuantity').keyup(function(e){
+	    this.value = this.value.replace(/\D/g,'');
+	    if(this.value == 0)	this.value = '';
+	    getSaldo();
+	});
+});
 
 /*WINDOW ONLOAD*/
 $(function(){
