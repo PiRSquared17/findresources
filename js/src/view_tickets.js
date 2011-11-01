@@ -56,7 +56,7 @@ $(function(){
 			dataType: "json",
 			async: true,
 			success: function(response){
-				alert("Se han guardado los datos");
+				//alert("Se han guardado los datos");
 				hidePopUp();
 				//TODO this is so ugly we shouldnt reload all the page.
 				window.location.reload();
